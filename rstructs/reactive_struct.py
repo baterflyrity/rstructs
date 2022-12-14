@@ -44,8 +44,8 @@ class IReactiveStructure(Generic[T], ABC, EventDispatcher):
 		"""Returns data iterator if available."""
 		return iter(self.data)
 
-	def __getitem__(self, item):
-		return self.get(item)
+	def __getitem__(self, key_or_item):
+		return self.get(key_or_item)
 
 	def __setitem__(self, key, value):
 		return self.update(key, value)
