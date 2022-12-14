@@ -32,14 +32,6 @@ class IReactiveStructure(Generic[T], ABC, EventDispatcher):
 		"""
 		...
 
-	@event
-	def before_destructed(self) -> None:
-		"""The structure is going to be deleted."""
-		...
-
-	def __del__(self):
-		self.before_destructed.trigger()
-
 	def __contains__(self, key_or_item) -> bool:
 		"""Checks whether key or item is contained by data."""
 		return key_or_item in self.data
